@@ -2,6 +2,9 @@
 
 use App\Livewire\KamarList;
 use App\Livewire\UserList;
+use App\Livewire\TransaksiList;
+use App\Http\Controllers\DashboardController;
+use App\Livewire\BookingList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +27,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/kamar', KamarList::class)->name('kamar');
     Route::get('/users', UserList::class)->name('users');
+    Route::get('/transaksi', TransaksiList::class)->name('transaksi');
 });
