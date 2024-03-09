@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\KamarList;
+use App\Livewire\UserList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/kamar', KamarList::class)->name('kamar');
+    Route::get('/users', UserList::class)->name('users');
 });

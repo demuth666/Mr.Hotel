@@ -27,6 +27,19 @@
         </div>
     </div>
 
+    @if($kamar && $kamar->exists)
+    <div class="col-span-12">
+        <div class="mt-4">
+            <x-label for="form.status_kamar" value="{{ __('Status Kamar') }}" />
+                <select wire:model="form.status_kamar" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full">
+                    <option value="Tersedia">Tersedia</option>
+                    <option value="Tidak Tersedia">Tidak Tersedia</option>
+                </select>
+            <x-input-error for="form.status_kamar" class="mt-2" />
+        </div>
+    </div>
+    @endif  
+
     <x-button class="mt-4">
         {{ __('Simpan') }}
     </x-button>

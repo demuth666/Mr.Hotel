@@ -30,7 +30,7 @@ class KamarForm extends Form
         if (empty($this->kamar)) {
             Kamar::create($this->only(['no_kamar', 'kelas_kamar', 'harga_kamar']));
         } else {
-            $this->kamar->update($this->only(['no_kamar', 'kelas_kamar', 'harga_kamar']));
+            $this->kamar->update($this->only(['no_kamar', 'kelas_kamar', 'harga_kamar', 'status_kamar']));
         }
         $this->reset();
     }
