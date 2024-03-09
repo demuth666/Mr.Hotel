@@ -19,18 +19,6 @@
                     <span>{{ $costumer }}</span>
                 </div>
             </div>
-            <div class="w-full bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 flex justify-between">
-                    <span>Ruangan</span>
-                    {{-- <span>{{ $rooms }}</span> --}}
-                </div>
-            </div>
-            <div class="w-full bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 flex justify-between">
-                    <span>Obat</span>
-                    {{-- <span>{{ $farmacies }}</span> --}}
-                </div>
-            </div>
         </div>
     </div>
 </x-app-layout>
