@@ -4,7 +4,7 @@ namespace App\Livewire\Forms;
 
 use Livewire\Attributes\Validate;
 use Livewire\Form;
-use App\Models\User;
+use App\Models\UserWeb as User;
 use Illuminate\Support\Facades\Hash;
 
 class UserForm extends Form

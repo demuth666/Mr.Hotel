@@ -6,7 +6,7 @@ use Livewire\Component;
 use LivewireUI\Modal\ModalComponent;
 use App\Models\Roles;
 use App\Livewire\Forms\UserForm;
-use App\Models\User;
+use App\Models\UserWeb as User;
 
 class UserModal extends ModalComponent
 {
