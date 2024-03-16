@@ -27,7 +27,7 @@ class KamarForm extends Form
     public function save()
     {
         $this->validate();
-        if (empty($this->kamar)) {
+        if (empty ($this->kamar)) {
             Kamar::create($this->only(['no_kamar', 'kelas_kamar', 'harga_kamar']));
         } else {
             $this->kamar->update($this->only(['no_kamar', 'kelas_kamar', 'harga_kamar', 'status_kamar']));
@@ -38,7 +38,7 @@ class KamarForm extends Form
     public function rules()
     {
         return [
-            'no_kamar' => ['required', 'numeric', 'unique:kamars,no_kamar,' . optional($this->kamar)->id],
+            'no_kamar' => ['required', 'numeric', 'unique:kamars,no_kamar,' . optional($this->kamar)->no_kamar],
             'kelas_kamar' => 'required|string',
             'harga_kamar' => 'required|numeric',
         ];

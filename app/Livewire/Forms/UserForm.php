@@ -31,7 +31,7 @@ class UserForm extends Form
     public function save()
     {
         $this->validate();
-        if (empty($this->user)) {
+        if (empty ($this->user)) {
             User::create($this->only(['nik', 'name', 'email', 'password', 'phone', 'role_id']));
         } else {
             $this->user->update($this->only(['nik', 'name', 'email', 'password', 'phone', 'role_id']));
