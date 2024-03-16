@@ -20,6 +20,12 @@ class Transaksi extends Model
         'kamar_id',
     ];
 
+    protected $casts = [
+        'total_bayar' => 'integer',
+        'user_id' => 'integer',
+        'kamar_id' => 'integer',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
