@@ -63,22 +63,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function roles()
-    {
-        return $this->belongsTo(Roles::class, 'role_id');
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($user) {
-            $user->password = Hash::make($user->password);
-        });
-
-        static::updating(function ($user) {
-            $user->password = Hash::make($user->password);
-        });
-    }
 }

@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\User;
+use App\Models\UserWeb as User;
 use Livewire\Attributes\On;
 use Livewire\WithPagination;
 use Illuminate\Database\Eloquent\Builder;
