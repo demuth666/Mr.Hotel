@@ -19,6 +19,11 @@ class Kamar extends Model
         'image'
     ];
 
+    protected $casts = [
+        'no_kamar' => 'integer',
+        'harga_kamar' => 'integer',
+    ];
+
     protected $attributes = [
         'status_kamar' => 'Tersedia'
     ];
