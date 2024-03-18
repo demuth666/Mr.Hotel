@@ -15,7 +15,8 @@ class Kamar extends Model
         'no_kamar',
         'kelas_kamar',
         'harga_kamar',
-        'status_kamar'
+        'status_kamar',
+        'image'
     ];
 
     protected $attributes = [

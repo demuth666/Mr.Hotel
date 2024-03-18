@@ -40,6 +40,18 @@
     </div>
     @endif  
 
+    <div class="col-span-12">
+        <div class="mt-4">
+            <x-label for="form.image" value="{{ __('Gambar') }}" />
+            <x-input wire:model="form.image" id="form.image" class="block mt-1 w-full" type="file" autocomplete="form.image" />
+            <x-input-error for="form.image" class="mt-2" />
+        </div>
+    </div>
+
+    <div wire:loading wire:target='form.image'>
+        <span class="text-green-500">Sedang Upload....</span>
+    </div>
+
     <x-button class="mt-4">
         {{ __('Simpan') }}
     </x-button>

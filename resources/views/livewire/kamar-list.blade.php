@@ -30,6 +30,7 @@
                                     <th class="border text-left px-4 py-2">Kelas Kamar</th>
                                     <th class="border text-left px-4 py-2">Harga Kamar</th>
                                     <th class="border text-left px-4 py-2">Status Kamar</th>
+                                    <th class="border text-left px-4 py-2">Gambar</th>
                                     <th class="border text-left px-4 py-2 ">Aksi</th>
                                 </tr>
                             </thead>
@@ -44,6 +45,9 @@
                                         @else
                                         <td class="border px-4 py-2 font-medium text-red-500">{{ $kamar->status_kamar }}</td>
                                         @endif
+                                        <td class="border px-4 py-2 font-medium text-red-500">
+                                            <img src="{{ asset('storage/' . $kamar->image) }}" alt="{{ $kamar->no_kamar }}" class="w-20 h-20">
+                                        </td>
                                         <td class="border px-4 py-2 font-medium">
                                             <div class="flex space-x-3">
                                                 <x-button wire:click="$dispatch('openModal', { component: 'kamar-modal', arguments: { kamar: {{ $kamar }} }})">
