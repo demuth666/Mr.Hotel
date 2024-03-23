@@ -25,6 +25,13 @@ class KamarModal extends ModalComponent
         $this->form->save();
         $this->closeModal();
         $this->dispatch('refresh-kamar-list');
+        $this->dispatch(
+            'alert',
+            message: 'Data kamar berhasil disimpan',
+            position: 'top-end',
+            type: 'success',
+            timer: 1500,
+        );
     }
 
     public function render()

@@ -13,6 +13,8 @@ class KamarForm extends Form
     public $kelas_kamar = '';
     public $harga_kamar = '';
     public $status_kamar = '';
+
+    public $oldImage;
     public $image = '';
 
     public ?Kamar $kamar = null;
@@ -26,7 +28,8 @@ class KamarForm extends Form
         $this->kelas_kamar = $kamar->kelas_kamar;
         $this->harga_kamar = $kamar->harga_kamar;
         $this->status_kamar = $kamar->status_kamar;
-        $this->image = $kamar->image;
+        // $this->image = $kamar->image;
+        $this->oldImage = $kamar->image;
     }
 
     public function save()
