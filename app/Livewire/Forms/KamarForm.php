@@ -6,6 +6,7 @@ use Livewire\Attributes\Validate;
 use Livewire\Form;
 use App\Models\Kamar;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class KamarForm extends Form
 {
@@ -40,9 +41,12 @@ class KamarForm extends Form
             $validated['image'] = $this->image = $this->image->store('kamar', 'public');
         }
 
-        if (empty ($this->kamar)) {
+        if (empty($this->kamar)) {
             Kamar::create($this->only(['no_kamar', 'kelas_kamar', 'harga_kamar', 'image']));
         } else {
+            if ($this->image) {
+                Storage::disk('public')->delete($this->oldImage);
+            }
             $this->kamar->update($this->only(['no_kamar', 'kelas_kamar', 'harga_kamar', 'status_kamar', 'image']));
         }
         $this->reset();

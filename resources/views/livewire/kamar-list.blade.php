@@ -56,7 +56,7 @@
                                         <td class="border px-4 py-2 font-medium">
                                             <div class="flex space-x-3">
                                                 <x-button
-                                                    wire:click="$dispatch('openModal', { component: 'kamar-modal', arguments: { kamar: {{ $kamar }} }})">
+                                                    wire:click="$dispatch('openModal', { component: 'kamar-modal', arguments: { kamar: {{ $kamar->id }} }})">
                                                     Edit
                                                 </x-button>
                                                 <x-danger-button
