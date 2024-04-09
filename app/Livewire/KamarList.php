@@ -6,6 +6,7 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use App\Models\Kamar;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Gate;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -27,6 +28,9 @@ class KamarList extends Component
 
     public function render()
     {
+        if (Gate::denies('manage-kamars')) {
+            abort(403);
+        }
         $kamar = Kamar::latest()
             ->when($this->search !== '', function ($query) {
                 $query->where('no_kamar', 'like', '%' . $this->search . '%')

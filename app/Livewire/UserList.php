@@ -7,6 +7,7 @@ use App\Models\UserWeb as User;
 use Livewire\Attributes\On;
 use Livewire\WithPagination;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Gate;
 
 class UserList extends Component
 {
@@ -17,6 +18,9 @@ class UserList extends Component
     #[On('refresh-user-list')]
     public function render()
     {
+        if (Gate::denies('manage-users')) {
+            abort(403);
+        }
         $user = User::latest()
             ->when($this->search !== '', fn(Builder $query) => $query
                 ->where('name', 'like', '%' . $this->search . '%')

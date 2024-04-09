@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Transaksi;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Gate;
 
 class TransaksiList extends Component
 {
@@ -14,6 +15,9 @@ class TransaksiList extends Component
 
     public function render()
     {
+        if (Gate::denies('manage-transaksis')) {
+            abort(403);
+        }
         $transaksi = Transaksi::latest()
             ->when($this->search !== '', function ($query) {
                 $query->where('total_bayar', 'like', '%' . $this->search . '%')
